@@ -11,15 +11,11 @@
         }
     ],
     "require": {
-        "guzzlehttp/guzzle": "*"
     },
     "autoload": {
-        "psr-0": {
+        "psr-4": {
             "Lrvl\\MailApp\\": "src/"
-        },
-        "files": [
-            "src/app/Http/helpers.php"
-        ]
+        }
     },
     "extra": {
         "laravel": {
