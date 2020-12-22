@@ -15,7 +15,10 @@
     "autoload": {
         "psr-4": {
             "Lrvl\\MailApp\\": "src/"
-        }
+        },
+        "files": [
+            "src/app/Http/helpers.php"
+        ]
     },
     "extra": {
         "laravel": {

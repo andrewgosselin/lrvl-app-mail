@@ -1,1 +1,1 @@
-Test
+{{$mailApp['name']}}

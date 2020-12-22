@@ -3,9 +3,7 @@ namespace Lrvl\MailApp;
 
 use Illuminate\Support\ServiceProvider;
 
-use Illuminate\Support\Facades\Auth;
-
-use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\View;
 
 class MailAppProvider extends ServiceProvider
 {
@@ -16,6 +14,10 @@ class MailAppProvider extends ServiceProvider
     {
         include __DIR__.'/routes/web.php';
         $this->loadViewsFrom(__DIR__.'/resources/views', 'mail');
+        View::share('mailApp', [
+            'name' => 'Mail',
+            'slug' => 'mail'
+        ]);
     }
 
     /**
@@ -23,10 +25,5 @@ class MailAppProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->publishes(
-            [
-                __DIR__.'/config' => config_path('hub/apps/mail')
-            ]
-        );
     }
 }
