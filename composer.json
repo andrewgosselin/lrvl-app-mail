@@ -1,43 +1,25 @@
 {
     "name": "lrvl/mail-app",
-    "description": "Mail App for Lrvl",
-    "keywords": [
-        "lrvl",
-        "mail-app"
-    ],
-    "homepage": "https://github.com/lrvl/mail-app",
+    "description": "Mail App for the Lrvl Hub.",
+    "homepage": "https://cyrexag.com",
     "license": "MIT",
     "authors": [
         {
             "name": "Andrew Gosselin",
-            "email": "gosseand2019@gmail.com",
-            "homepage": "https://cyrexag.com",
+            "email": "maninasuitofficial@gmail.com",
             "role": "Developer"
         }
     ],
     "require": {
-        "php": "^7.4|^8.0",
-        "illuminate/contracts": "^8.0"
-    },
-    "require-dev": {
-        "orchestra/testbench": "^6.0",
-        "phpunit/phpunit": "^9.3"
+        "guzzlehttp/guzzle": "*"
     },
     "autoload": {
-        "psr-4": {
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-        }
-    },
-    "scripts": {
-        "psalm": "vendor/bin/psalm",
-        "test": "vendor/bin/phpunit --colors=always",
-        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
-    },
-    "config": {
-        "sort-packages": true
+        "psr-0": {
+            "Lrvl\\MailApp\\": "src/"
+        },
+        "files": [
+            "src/app/Http/helpers.php"
+        ]
     },
     "extra": {
         "laravel": {
@@ -45,7 +27,5 @@
                 "Lrvl\\MailApp\\MailAppProvider"
             ]
         }
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+    }
 }
