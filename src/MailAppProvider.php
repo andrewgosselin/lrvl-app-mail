@@ -15,9 +15,14 @@ class MailAppProvider extends ServiceProvider
         include __DIR__.'/routes/web.php';
         $this->loadViewsFrom(__DIR__.'/resources/views', 'mail');
         $this->loadMigrationsFrom(__DIR__.'/database/migrations');
+        $this->publishes([__DIR__.'/public' => public_path('vendor/lrvl/mail')], 'public');
         View::share('mailApp', [
             'name' => 'Mail',
-            'slug' => 'mail'
+            'slug' => 'mail',
+            'icon' => [
+                "type" => "url",
+                "value" => "/vendor/lrvl/mail/icon.png"
+            ]
         ]);
     }
 
