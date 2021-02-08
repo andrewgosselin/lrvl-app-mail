@@ -14,8 +14,11 @@ class MailAppProvider extends ServiceProvider
     {
         include __DIR__.'/routes/web.php';
         $this->loadViewsFrom(__DIR__.'/resources/views', 'mail');
-        $config = config('hub.apps.mail') ?? ['name' => 'Mail', 'slug' => 'mail'];
-        View::share('mailApp', $config);
+        $this->loadMigrationsFrom(__DIR__.'/database/migrations');
+        View::share('mailApp', [
+            'name' => 'Mail',
+            'slug' => 'mail'
+        ]);
     }
 
     /**

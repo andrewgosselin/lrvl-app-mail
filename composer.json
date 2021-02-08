@@ -11,7 +11,6 @@
         }
     ],
     "require": {
-        "webklex/laravel-imap": "^2.3"
     },
     "autoload": {
         "psr-4": {
